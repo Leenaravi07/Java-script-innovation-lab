@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Program 5</title>
+</head>
+<body>
+
+    <h2>word & character count</h2>
+    <textarea id="mainText" placeholder="Text here"></textarea>
+    <div>
+        CharCount:<span id="CharCount"></span><br>
+        WordsCount:<span id="WordsCount"></span>
+    </div>
+
+    <script>
+        document.getElementById("mainText").addEventListener("input", function () {
+            let text = this.value;
+            document.getElementById("CharCount").innerText = text.length;
+            let trimmed = text.trim();
+            let words = trimmed == "" ? 0 : trimmed.split(/\s+/).length;
+            document.getElementById("WordsCount").innerText = words;
+        });
+    </script>
+
+</body>
+</html>
